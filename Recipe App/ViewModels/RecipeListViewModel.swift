@@ -36,8 +36,6 @@ class RecipeListViewModel: ObservableObject {
             do  {
                 let list = try await ExploreDomain.getAllRecipies()
                 
-                currentState = .complete(list)
-                
                 currentState = list.isEmpty
                     ? .empty
                     : .complete(list)
